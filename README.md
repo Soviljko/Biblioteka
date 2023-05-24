@@ -35,6 +35,7 @@ dugmad ne budu razmaknuta itd.
 2. Ikonica je ostavljena na izboru studenta (bitno je samo da je to ikonica neke knjige).
 
 FUNKCIONALNOSTI
+
 Napomene:
 - za čuvanja podataka se može koristiti binarna i/ili tekstualna datoteka i/ili baza podataka
 - ikonica - nije bitna dimenzija ikonice, bitno je samo da slika bude mala kada se prikaže u tabeli ili
