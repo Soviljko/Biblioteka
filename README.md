@@ -33,6 +33,7 @@ DIZAJN APLIKACIJE
 unos i izmenu ima izgled standardne forme tj. da ne budu sva polja u jednom redu i/ili da
 dugmad ne budu razmaknuta itd.
 2. Ikonica je ostavljena na izboru studenta (bitno je samo da je to ikonica neke knjige).
+
 FUNKCIONALNOSTI
 Napomene:
 - za čuvanja podataka se može koristiti binarna i/ili tekstualna datoteka i/ili baza podataka
