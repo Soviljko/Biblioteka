@@ -5,8 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblioteka"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1160">
     <Grid>
-        
+        <!-- Prvi tab(Pregled knjiga) -->
+        <TabControl>
+            <TabItem Header="Pregled knjiga">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- ListVIew za prikaz knjiga -->
+                    <ListView x:Name="knjigeListView" Grid.Column="0" SelectionChanged="knjigeListView_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Ikonica">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Width="25" Height="25" Source="{Binding Ikonica}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Sifra" DisplayMemberBinding="{Binding Sifra}" Width="50"/>
+                                <GridViewColumn Header="Naslov Knjige" DisplayMemberBinding="{Binding NaslovKnjige}" Width="150"/>
+                                <GridViewColumn Header="Autor" DisplayMemberBinding="{Binding Autor}" Width="100"/>
+                                <GridViewColumn Header="Zanr" DisplayMemberBinding="{Binding Zanr}" Width="100"/>
+                                <GridViewColumn Header="Dostupnost" DisplayMemberBinding="{Binding Dostupnost}" Width="100"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    
+                    <!-- Prikaz informacija o knjizi -->
+                    <StackPanel Grid.Column="1" Margin="5 0 0 0">
+                        <TextBlock Text="Informacije o izabranoj knjizi" FontWeight="ExtraBold"/>
+                        <StackPanel Orientation="Horizontal" Margin="0 10">
+                            <TextBlock Text="Sifra:" Width="60" VerticalAlignment="Center"/>
+                            <TextBox x:Name="sifraTextBox" Width="100" IsEnabled="True"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 10">
+                            <TextBlock Text="Naslov Knjige:" Width="80" VerticalAlignment="Center"/>
+                            <TextBox x:Name="naslovTextBox" Width="150" Margin="0 0 0 0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 10">
+                            <TextBlock Text="Autor:" Width="60" VerticalAlignment="Center"/>
+                            <TextBox x:Name="autorTextBox" Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 10">
+                            <TextBlock Text="Zanr Knjige:" Width="80" VerticalAlignment="Center"/>
+                            <TextBox x:Name="zanrTextBox" Width="100"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 10">
+                            <TextBlock Text="Dostupnost Knjige:" Width="100" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="dostupnostCB" IsChecked="True" Margin="5 10"/>
+                        </StackPanel>
+                        <Button Content="Dodaj Knjigu" Margin="0 10" Click="DodajDugme_Click"/>
+                        <Button Content="Izmeni knjigu" Margin="0 0 0 10" Click="IzmeniDugme_Click"/>
+                        <Button Content="Ukloni Knjigu iz liste" Click="UkloniDugme_Click"/>
+                        <Button Content="Promeni ikonicu knjige" Margin="10" Click="PromenaIkoniceDugme_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <!-- Drugi Tab(Iznajmljivanje knjiga) -->
+        </TabControl>
     </Grid>
 </Window>
