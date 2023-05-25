@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="1160">
     <Grid>
+        <Grid.Resources>
+            <local:DostupnostPretvarac x:Key="DostupnostPretvarac"/>
+        </Grid.Resources>
         <!-- Prvi tab(Pregled knjiga) -->
         <TabControl>
             <TabItem Header="Pregled knjiga">
@@ -17,6 +20,12 @@
                     </Grid.ColumnDefinitions>
                     <!-- ListVIew za prikaz knjiga -->
                     <ListView x:Name="knjigeListView" Grid.Column="0" SelectionChanged="knjigeListView_SelectionChanged">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="VerticalContentAlignment" Value="Center" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Ikonica">
@@ -26,11 +35,11 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Sifra" DisplayMemberBinding="{Binding Sifra}" Width="50"/>
-                                <GridViewColumn Header="Naslov Knjige" DisplayMemberBinding="{Binding NaslovKnjige}" Width="150"/>
-                                <GridViewColumn Header="Autor" DisplayMemberBinding="{Binding Autor}" Width="100"/>
+                                <GridViewColumn Header="Sifra" DisplayMemberBinding="{Binding Sifra}" Width="50" />
+                                <GridViewColumn Header="Naslov Knjige" DisplayMemberBinding="{Binding NaslovKnjige}" Width="200"/>
+                                <GridViewColumn Header="Autor" DisplayMemberBinding="{Binding Autor}" Width="150"/>
                                 <GridViewColumn Header="Zanr" DisplayMemberBinding="{Binding Zanr}" Width="100"/>
-                                <GridViewColumn Header="Dostupnost" DisplayMemberBinding="{Binding Dostupnost}" Width="100"/>
+                                <GridViewColumn Header="Dostupnost" Width="100" DisplayMemberBinding="{Binding Dostupnost, Converter={StaticResource DostupnostPretvarac}}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
