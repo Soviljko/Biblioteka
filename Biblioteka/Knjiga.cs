@@ -18,14 +18,14 @@ namespace Biblioteka
             }
         }
 
-        private int sifra;
+        private string sifra;
         private string naslovKnjige;
         private string autor;
         private string zanr;
         private bool dostupnost;
         private string ikonica;
 
-        public int Sifra
+        public string Sifra
         {
             get { return sifra; }
             set
@@ -103,7 +103,7 @@ namespace Biblioteka
             }
         }
 
-        public Knjiga(int s, string n, string a, string z, bool d)
+        public Knjiga(string s, string n, string a, string z, bool d)
         {
             this.sifra = s;
             this.naslovKnjige = n;
@@ -114,7 +114,7 @@ namespace Biblioteka
 
         }
 
-        public Knjiga(int s, string n, string a, string z, bool d, string i)
+        public Knjiga(string s, string n, string a, string z, bool d, string i)
         {
             this.sifra = s;
             this.naslovKnjige = n;

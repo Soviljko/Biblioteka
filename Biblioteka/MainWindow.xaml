@@ -48,29 +48,51 @@
                     <StackPanel Grid.Column="1" Margin="5 0 0 0">
                         <TextBlock Text="Informacije o izabranoj knjizi" FontWeight="ExtraBold"/>
                         <StackPanel Orientation="Horizontal" Margin="0 10">
-                            <TextBlock Text="Sifra:" Width="60" VerticalAlignment="Center"/>
+                            <TextBlock Text="Sifra knjige:" Width="65" VerticalAlignment="Center"/>
                             <TextBox x:Name="sifraTextBox" Width="100" IsEnabled="True"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 10">
-                            <TextBlock Text="Naslov Knjige:" Width="80" VerticalAlignment="Center"/>
+                            <TextBlock Text="Naslov knjige:" Width="80" VerticalAlignment="Center"/>
                             <TextBox x:Name="naslovTextBox" Width="150" Margin="0 0 0 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 10">
-                            <TextBlock Text="Autor:" Width="60" VerticalAlignment="Center"/>
+                            <TextBlock Text="Autor knjige:" Width="70" VerticalAlignment="Center"/>
                             <TextBox x:Name="autorTextBox" Width="200"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 10">
-                            <TextBlock Text="Zanr Knjige:" Width="80" VerticalAlignment="Center"/>
+                            <TextBlock Text="Zanr knjige:" Width="80" VerticalAlignment="Center"/>
                             <TextBox x:Name="zanrTextBox" Width="100"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 10">
-                            <TextBlock Text="Dostupnost Knjige:" Width="100" VerticalAlignment="Center"/>
-                            <CheckBox x:Name="dostupnostCB" IsChecked="True" Margin="5 10"/>
+                            <TextBlock Text="Dostupnost knjige:" Width="100" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="dostupnostCB" IsChecked="False" Margin="5 10"/>
                         </StackPanel>
-                        <Button Content="Dodaj Knjigu" Margin="0 10" Click="DodajDugme_Click"/>
-                        <Button Content="Izmeni knjigu" Margin="0 0 0 10" Click="IzmeniDugme_Click"/>
-                        <Button Content="Ukloni Knjigu iz liste" Click="UkloniDugme_Click"/>
-                        <Button Content="Promeni ikonicu knjige" Margin="10" Click="PromenaIkoniceDugme_Click"/>
+                        <Button Content="Unos podataka za novu knjigu" Margin="0 10" Click="DodajDugme_Click"/>
+                        <Button Content="Izmeni izabranu knjigu u listi" Margin="0 0 0 10" Click="IzmeniDugme_Click"/>
+                        <Button Content="Ukloni izabranu knjigu iz liste" Click="UkloniDugme_Click"/>
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                            <TextBlock Text="Pretraga po naslovu:" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                            <TextBox x:Name="naslovPretragaTextBox" Margin="5" Width="200"/>
+                        </StackPanel>
+
+                        <!-- Pretraga po autoru -->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                            <TextBlock Text="Pretraga po autoru:" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                            <TextBox x:Name="autorPretragaTextBox" Width="200"/>
+                        </StackPanel>
+
+                        <!-- Pretraga po dostupnosti -->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                            <TextBlock Text="Pretraga po dostupnosti:" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                            <ComboBox x:Name="dostupnostPretragaComboBox" Width="120">
+                                <ComboBoxItem Content="Sve"/>
+                                <ComboBoxItem Content="Dostupne"/>
+                                <ComboBoxItem Content="Nedostupne"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <!-- Dugme za pokretanje pretrage -->
+                        <Button Content="Pretraži listu knjiga" HorizontalAlignment="Left" Margin="0 0 0 10" Click="PretraziListuKnjiga_Click"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
