@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblioteka"
         mc:Ignorable="d"
-        Title="Dodaj knjigu" Height="300" Width="650" WindowStartupLocation="CenterScreen">
+        Title="Dodavanje nove knjige u listu knjiga" Height="300" Width="650" WindowStartupLocation="CenterScreen">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -22,32 +22,32 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-            <Label Content="Sifra knjige:" VerticalAlignment="Center"/>
+            <Label Content="Sifra nove knjige:" VerticalAlignment="Center"/>
             <TextBox  x:Name="sifraTextBox" Margin="3" Width="213" />
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
-            <Label Content="Naslov knjige:" VerticalAlignment="Center"/>
-            <TextBox x:Name="naslovKnjigeTextBox" Margin="3" Width="200" />
+            <Label Content="Naslov nove knjige:" VerticalAlignment="Center"/>
+            <TextBox x:Name="naslovKnjigeTextBox" Margin="3" Width="202" />
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
-            <Label Content="Autor knjige:" VerticalAlignment="Center"/>
+            <Label Content="Autor nove knjige:" VerticalAlignment="Center"/>
             <TextBox x:Name="autorTextBox" Margin="3" Width="206" />
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
-            <Label Content="Zanr knjige:" VerticalAlignment="Center"/>
-            <TextBox x:Name="zanrTextBox" Margin="3" Width="211" />
+            <Label Content="Zanr nove knjige:" VerticalAlignment="Center"/>
+            <TextBox x:Name="zanrTextBox" Margin="3" Width="213" />
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
-            <Label Content="Dostupnost knjige:" VerticalAlignment="Center"/>
+            <Label Content="Dostupnost nove knjige:" VerticalAlignment="Center"/>
             <CheckBox x:Name="dostupnostCheckBox" IsChecked="True" IsEnabled="False" Margin="-3 10 10 8"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0">
-        <Button Content="Dodaj knjigu u listu" Margin="5" Click="DodajDugme_Click"/>
+        <Button Content="Dodaj novu knjigu u listu knjiga" Margin="5" Click="DodajDugme_Click"/>
         </StackPanel>
     </Grid>
 </Window>

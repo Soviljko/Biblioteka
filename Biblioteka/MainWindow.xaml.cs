@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Biblioteka
 {
@@ -29,21 +30,21 @@ namespace Biblioteka
             InitializeComponent();
             kolekcijaKnjiga = new ObservableCollection<Knjiga>();
             knjigeListView.ItemsSource = kolekcijaKnjiga;
-            kolekcijaKnjiga.Add(new Knjiga("1", "Na Drini ćuprija", "Ivo Andrić", "Ep", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica1.png"));
-            kolekcijaKnjiga.Add(new Knjiga("2", "Prokleta avlija", "Ivo Andrić", "Kratka priča", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica4.png"));
-            kolekcijaKnjiga.Add(new Knjiga("3", "Seobe", "Milos Crnjanski", "Epski roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica2.png"));
-            kolekcijaKnjiga.Add(new Knjiga("4", "Gorski vijenac", "Petrovic Njegos", "Epska poema", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica5.png"));
-            kolekcijaKnjiga.Add(new Knjiga("5", "Zlocin i kazna", "Fjodor Dostojevski", "Roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica3.png"));
-            kolekcijaKnjiga.Add(new Knjiga("6", "Besnilo", "Borislav Pekic", "Roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica2.png"));
-            kolekcijaKnjiga.Add(new Knjiga("7", "Koreni", "Dobrica Cosic", "Roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica1.png"));
-            kolekcijaKnjiga.Add(new Knjiga("8", "Alkohol", "Milenko Jergovic", "Zbirka priča", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica4.png"));
-            kolekcijaKnjiga.Add(new Knjiga("9", "Sabrana dela", "Desanka Maksimovic", "Poezija", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica3.png"));
-            kolekcijaKnjiga.Add(new Knjiga("10", "Deobe", "Dobrica Cosic", "Roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica5.png"));
-            kolekcijaKnjiga.Add(new Knjiga("11", "Majstor i Margarita", "Mihail Bulgakov", "Roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica3.png"));
-            kolekcijaKnjiga.Add(new Knjiga("12", "Hari Poter i Kamen mudrosti", "J.K. Rowling", "Fantazija", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica1.png"));
-            kolekcijaKnjiga.Add(new Knjiga("13", "Lolita", "Vladimir Nabokov", "Roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica2.png"));
-            kolekcijaKnjiga.Add(new Knjiga("14", "Rat i mir", "Lav Nikolajevic Tolstoj", "Roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica4.png"));
-            kolekcijaKnjiga.Add(new Knjiga("15", "Veliki Getsbi", "F. Scott Fitzgerald", "Roman", true, @"C:\Users\Ognjen\Desktop\ProjekatBiblioteka\Biblioteka\Biblioteka\bin\Debug\Ikonica3.png"));
+            kolekcijaKnjiga.Add(new Knjiga("1", "Na Drini ćuprija", "Ivo Andrić", "Ep", true, System.IO.Path.Combine(Environment.CurrentDirectory,"Ikonica1.png")));
+            kolekcijaKnjiga.Add(new Knjiga("2", "Prokleta avlija", "Ivo Andrić", "Kratka priča", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica4.png")));
+            kolekcijaKnjiga.Add(new Knjiga("3", "Seobe", "Milos Crnjanski", "Epski roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica2.png")));
+            kolekcijaKnjiga.Add(new Knjiga("4", "Gorski vijenac", "Petrovic Njegos", "Epska poema", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica5.png")));
+            kolekcijaKnjiga.Add(new Knjiga("5", "Zlocin i kazna", "Fjodor Dostojevski", "Roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica3.png")));
+            kolekcijaKnjiga.Add(new Knjiga("6", "Besnilo", "Borislav Pekic", "Roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica2.png")));
+            kolekcijaKnjiga.Add(new Knjiga("7", "Koreni", "Dobrica Cosic", "Roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica1.png")));
+            kolekcijaKnjiga.Add(new Knjiga("8", "Alkohol", "Milenko Jergovic", "Zbirka priča", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica4.png")));
+            kolekcijaKnjiga.Add(new Knjiga("9", "Sabrana dela", "Desanka Maksimovic", "Poezija", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica3.png")));
+            kolekcijaKnjiga.Add(new Knjiga("10", "Deobe", "Dobrica Cosic", "Roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica5.png")));
+            kolekcijaKnjiga.Add(new Knjiga("11", "Majstor i Margarita", "Mihail Bulgakov", "Roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica3.png")));
+            kolekcijaKnjiga.Add(new Knjiga("12", "Hari Poter i Kamen mudrosti", "J.K. Rowling", "Fantazija", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica1.png")));
+            kolekcijaKnjiga.Add(new Knjiga("13", "Lolita", "Vladimir Nabokov", "Roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica2.png")));
+            kolekcijaKnjiga.Add(new Knjiga("14", "Rat i mir", "Lav Nikolajevic Tolstoj", "Roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica4.png")));
+            kolekcijaKnjiga.Add(new Knjiga("15", "Veliki Getsbi", "F. Scott Fitzgerald", "Roman", true, System.IO.Path.Combine(Environment.CurrentDirectory, "Ikonica5.png")));
         }
 
         private void knjigeListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
