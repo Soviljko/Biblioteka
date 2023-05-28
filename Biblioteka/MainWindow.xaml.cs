@@ -72,7 +72,7 @@ namespace Biblioteka
 
         private void IzmeniDugme_Click(object sender, RoutedEventArgs e)
         {
-            if(knjigeListView.SelectedItem is Knjiga izabranaKnjiga)
+            /*if(knjigeListView.SelectedItem is Knjiga izabranaKnjiga)
             {
 
                 string originalnaSifra = izabranaKnjiga.Sifra;
@@ -120,6 +120,40 @@ namespace Biblioteka
 
                 }
 
+            }*/
+
+            if (knjigeListView.SelectedItem is Knjiga izabranaKnjiga)
+            {
+                string originalnaSifra = izabranaKnjiga.Sifra;
+                string originalniNaslov = izabranaKnjiga.NaslovKnjige;
+                string originalniAutor = izabranaKnjiga.Autor;
+                string originalniZanr = izabranaKnjiga.Zanr;
+                bool originalnaDostupnost = izabranaKnjiga.Dostupnost;
+                string originalnaIkonica = izabranaKnjiga.Ikonica;
+
+                IzmenaKnjigeWindow izmenaWindow = new IzmenaKnjigeWindow(izabranaKnjiga);
+
+                bool? rezultat = izmenaWindow.ShowDialog();
+
+                if (izmenaWindow.DialogResult == true)
+                {
+                    // Ažuriranje knjige na osnovu rezultata izmene
+                    sifraTextBox.Text = izabranaKnjiga.Sifra;
+                    naslovTextBox.Text = izabranaKnjiga.NaslovKnjige;
+                    autorTextBox.Text = izabranaKnjiga.Autor;
+                    zanrTextBox.Text = izabranaKnjiga.Zanr;
+                    dostupnostCB.IsChecked = izabranaKnjiga.Dostupnost;
+                    knjigeListView.Items.Refresh();
+                }
+                else if (izmenaWindow.DialogResult == false)
+                {
+                    sifraTextBox.Text = originalnaSifra;
+                    naslovTextBox.Text = originalniNaslov;
+                    autorTextBox.Text = originalniAutor;
+                    zanrTextBox.Text = originalniZanr;
+                    dostupnostCB.IsChecked = originalnaDostupnost;
+                    // Odbijanje izmena - ne preduzima se ništa
+                }
             }
         }
         

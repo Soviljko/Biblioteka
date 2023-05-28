@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IzmenaKnjigeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +75,9 @@
       <DependentUpon>DodajKnjiguWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DostupnostPretvarac.cs" />
+    <Compile Include="IzmenaKnjigeWindow.xaml.cs">
+      <DependentUpon>IzmenaKnjigeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Knjiga.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
